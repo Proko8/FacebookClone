@@ -1,9 +1,12 @@
 import React from "react";
+import LoginPage from "./components/LoginPage/LoginPage";
 
 function App() {
   return (
     <div>
-      <h1>Facebook</h1>
+      
+      <LoginPage />
+
     </div>
   )
 }
