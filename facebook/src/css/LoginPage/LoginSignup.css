@@ -1,0 +1,29 @@
+.loginsignup{
+    padding-top: 50px;
+    padding-right: 350px;
+}
+
+.loginsignup__signup{
+    line-height: 10px;
+}
+
+.loginsignup__free{
+    font-weight: 500;
+}
+
+.loginsignup__mobilebox{
+    width: 400px; height: 20px;
+    border-radius: 3px;
+}
+.lignsignup__fname{
+    width: 190px; height: 20px;
+    margin-right: 13px;
+    border-radius: 3px;
+}
+.lignsignup__lname{
+    width: 190px; height: 20px;
+    border-radius: 3px;
+    
+}
+
+

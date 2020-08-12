@@ -1,0 +1,21 @@
+.loginleft{
+    padding-left: 200px;
+    padding-top: 75px;
+}
+.loginleft__connect{
+    color: black;
+}
+.loginleft__boldfont{
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+}
+.loginleft__dullfont{
+    margin-top: 2px;
+    margin-left: 10px;
+    color: rgba(2, 2, 2, 0.349);
+}
+.loginleft__text{
+    margin-left: 80px;
+    padding-top: 13px;
+}
