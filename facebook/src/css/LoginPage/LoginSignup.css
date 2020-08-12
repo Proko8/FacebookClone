@@ -12,16 +12,16 @@
 }
 
 .loginsignup__mobilebox{
-    width: 400px; height: 20px;
+    width: 400px; height: 25px;
     border-radius: 3px;
 }
 .lignsignup__fname{
-    width: 190px; height: 20px;
+    width: 190px; height: 25px;
     margin-right: 13px;
     border-radius: 3px;
 }
 .lignsignup__lname{
-    width: 190px; height: 20px;
+    width: 190px; height: 25px;
     border-radius: 3px;
     
 }
@@ -50,4 +50,32 @@
     margin-left: 10px;
 }
 
+.loginsignup__gender{
+    display: flex;
+    flex-direction: row;
+}
 
+.loginsignup__male{
+    margin-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.loginsignup__female{
+    margin-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.loginsignup__terms{
+    margin-top: 5px;
+    width: 410px;
+}
+.loginsignup__submit{
+    color: white;
+    background-color: green;
+    border-radius: 3px;
+    height: 30px;
+    width: 175px;
+    font-weight: bold;
+}
