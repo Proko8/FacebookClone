@@ -26,4 +26,28 @@
     
 }
 
+.loginsignup__year{
+    width: 40px;
+    height: 20px;
+}
+
+.loginsignup__day{
+    width: 40px;
+    height: 20px;
+}
+
+.loginsignup__months{
+    width: 40px;
+    height: 20px;
+}
+
+.loginsignup__birthday{
+    display: flex;
+}
+
+.loginsignup__question{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
 

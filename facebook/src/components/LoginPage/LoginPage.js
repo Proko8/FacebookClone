@@ -12,7 +12,6 @@ function LoginPage() {
             <LoginLeft />
             <LoginSignup />
             </div>
-            
         </div>
     )
 }
