@@ -1,0 +1,44 @@
+.homeheader {
+  display: flex;
+  flex-direction: row;
+  background-color: #3b5998;
+  max-height: 80px;
+  padding: 3px;
+  color: white;
+}
+.homeheader__logo {
+  max-width: 20px;
+  max-height: 20px;
+  padding-top: 5px;
+}
+.homeheader__left {
+  display: flex;
+  padding-right: 25%;
+  padding-left: 30px;
+}
+
+.homeheader__right {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+
+.homeheader__user {
+  
+}
+
+.homeheader__search {
+  margin-left: 15px;
+  padding-right: 200px;
+  margin-top: 4px;
+}
+
+.homeheader__user{
+    color: white;
+}
+
+.homeheader__home{
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+}
