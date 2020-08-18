@@ -1,8 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../css/LoginPage/LoginSignup.css";
+import UserPool from './UserPool';
 
 function LoginSignup() {
-    
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    UserPool.signUp(email, password, [], null, (err, data) => {
+      if (err) console.error(err);
+      console.log(data);
+    });
+  };
+
   return (
     <div className="loginsignup">
       <div className="loginsignup__signup">
@@ -15,30 +26,36 @@ function LoginSignup() {
             type="text"
             className="loginsignup__fname"
             placeholder="First Name"
-            
           />
           <input
             type="text"
             className="loginsignup__lname"
             placeholder="Last Name"
-            
           />
         </div>
         <br></br>
+        <form onSubmit={onSubmit}>
         <input
-          type="text"
+          value={email}
           className="loginsignup__mobilebox"
           placeholder="Mobile number or email"
-          
+          onChange={(event) => setEmail(event.target.value)}
         />
         <br></br>
         <br></br>
+        
         <input
-          type="text"
+          value={password}
           className="loginsignup__mobilebox"
           placeholder="New password"
-          
+          onChange={(event) => setPassword(event.target.value)}
         />
+        <button
+        className="loginsignup__submit"
+        type="submit"
+        value="Create Account"
+      >Sign up</button>
+        </form>
       </div>
 
       <h3>Birthday</h3>
@@ -169,7 +186,11 @@ function LoginSignup() {
         read our Data Policy, including our Cookie Use. You may recieve SMS
         Notifications from Facebook and can opt out at any time.
       </h5>
-      <input className="loginsignup__submit" type="submit" value="Create Account"></input>
+      {/* <button
+        className="loginsignup__submit"
+        type="submit"
+        value="Create Account"
+      >Sign up</button> */}
       <h5>Create a Page for a celebrity, band or business.</h5>
     </div>
   );

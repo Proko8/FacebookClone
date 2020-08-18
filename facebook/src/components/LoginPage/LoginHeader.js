@@ -7,37 +7,30 @@ function LoginHeader() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // const onSubmit = (event) => {
-  //   event.preventDefault();
-  //   UserPool.signUp(email, password, [], null, (err, data) => {
-  //     if (err) console.error(err);
-  //     console.log(data);
-  //   });
-  // };
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
 
     const user = new CognitoUser({
       Username: email,
-      Pool: UserPool
+      Pool: UserPool,
     });
     const authDetails = new AuthenticationDetails({
       Username: email,
-      Password: password
+      Password: password,
     });
 
     user.authenticateUser(authDetails, {
-      onSuccess: data => {
+      onSuccess: (data) => {
         console.log("onSuccess:", data);
       },
 
-      onFailure: err => {
+      onFailure: (err) => {
         console.error("onFailure:", err);
       },
 
-      newPasswordRequired: data => {
+      newPasswordRequired: (data) => {
         console.log("newPasswordRequired:", data);
-      }
+      },
     });
   };
   return (
