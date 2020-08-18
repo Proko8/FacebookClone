@@ -4,7 +4,7 @@ var connection = mysql.createConnection(mysqlConfig);
 
 // const createAccount = (cb) => {
 //   connection.query(
-//     "INSERT INTO Accounts(firstname,lastname, email, password) VALUES (? , ? , ?, ?",
+//     "INSERT INTO accounts(firstname,lastname, email, password) VALUES (? , ? , ?, ?",
 //     [firstname, lastname, email, password],
 //     (err, data) => {
 //       if (err) {
@@ -19,7 +19,7 @@ var connection = mysql.createConnection(mysqlConfig);
 // };
 
 // const verifyAccount = (cb) => {
-//   connection.query("SELECT * from Accounts", (err, data) => {
+//   connection.query("SELECT * from accounts", (err, data) => {
 //     if (err) {
 //       console.log("Could not create user.");
 //       cb(err, null);
@@ -30,9 +30,9 @@ var connection = mysql.createConnection(mysqlConfig);
 //   });
 // };
 
-const createPost = (cb) => {
+const createPost = (firstname, post, cb) => {
   connection.query(
-    "INSERT INTO Posts(firstname, post) VALUES (? , ?",
+    "INSERT INTO posts(firstname, post) VALUES (? , ?",
     [firstname, post],
     (err, data) => {
       if (err) {
@@ -47,7 +47,7 @@ const createPost = (cb) => {
 };
 
 const retrievePost = (cb) => {
-  connection.query("SELECT * from Posts", (err, data) => {
+  connection.query("SELECT * from posts", (err, data) => {
     if (err) {
       console.log("Could not create user.");
       cb(err, null);

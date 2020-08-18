@@ -7,7 +7,7 @@ function LoginHeader() {
   const [password, setPassword] = useState("");
 
   const poolData = {
-    userPoolId: "us-east-2_EGvjyyHZy",
+    UserPoolId: "us-east-2_EGvjyyHZy",
     ClientId: "7ttja2lo5vednd9im5mittppc2",
   };
 

@@ -11,7 +11,7 @@ app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded({ extended: true }) );
 app.use(express.static(path.join(__dirname + '/../react-client/dist')));
 
-// app.get('/api/Accounts', function (req, res) {
+// app.get('/api/accounts', function (req, res) {
 //     db.verifyAccount((err, data) => {          
 //       if(err){                                
 //         console.log('Accounts DB GET error');
@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname + '/../react-client/dist')));
 //     })
 //   });
 
-//   app.post('/api/Accounts', function (req, res) {
+//   app.post('/api/accounts', function (req, res) {
 //     db.createAccount(req.body.firstname, req.body.lastname,req.body.email, req.body.password,(err, data) => {          
 //       if(err){                                
 //         console.log('Accounts DB POST error');
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname + '/../react-client/dist')));
 //     })
 //   });
 
-    app.get('/api/Posts', function (req, res) {
+    app.get('/api/posts', function (req, res) {
       db.retrievePost((err, data) => {          
         if(err){                                
           console.log('Posts DB GET error');
@@ -47,7 +47,8 @@ app.use(express.static(path.join(__dirname + '/../react-client/dist')));
       })
     });
   
-    app.post('/api/Posts', function (req, res) {
+    app.post('/api/posts', function (req, res) {
+      console.log("Before DB")
       db.createPost(req.body.firstname, req.body.post,(err, data) => {          
         if(err){                                
           console.log('Posts DB POST error');
