@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../css/LoginPage/LoginHeader.css";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
-import UserPool from "./UserPool.js";
+import UserPool from "../UserPool.js";
 
 function LoginHeader() {
   const [email, setEmail] = useState("");
@@ -26,6 +26,7 @@ function LoginHeader() {
 
       onFailure: (err) => {
         console.error("onFailure:", err);
+        alert("Invalid email or password")
       },
 
       newPasswordRequired: (data) => {
@@ -40,26 +41,27 @@ function LoginHeader() {
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS6TTtDRn5-_ZS_Dqkw-mk_O23qcVOrI4gNGw&usqp=CAU"
         alt=""
       />
-      <div className="loginheader__username">
-        <h5 className="loginheader__text">Email or Phone</h5>
-        <form onSubmit={onSubmit}>
-          <input
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </form>
-      </div>
-      <div className="loginheader__password">
-        <h5 className="loginheader__text2">Password</h5>
-        <form onSubmit={onSubmit}>
-          <input
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </form>
-        <h5 className="loginheader__text3">Forgot account?</h5>
-      </div>
-      <button className="loginheader__loginbutton">Log In</button>
+
+      <form onSubmit={onSubmit} className="loginheader__login">
+        <input
+          className="loginheader__field"
+          value={email}
+          placeholder="Email"
+          onChange={(event) => setEmail(event.target.value)}
+        />
+
+        <input
+          className="loginheader__field"
+          type="password"
+          value={password}
+          placeholder="Password"
+          onChange={(event) => setPassword(event.target.value)}
+        />
+
+        <button className="loginheader__loginbutton" type="submit">
+          Login
+        </button>
+      </form>
     </div>
   );
 }

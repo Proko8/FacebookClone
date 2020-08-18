@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../css/LoginPage/LoginSignup.css";
-import UserPool from "./UserPool";
+import UserPool from "../UserPool";
 
 function LoginSignup() {
   const [email, setEmail] = useState("");
@@ -45,6 +45,7 @@ function LoginSignup() {
           <br></br>
 
           <input
+            type="password"
             value={password}
             className="loginsignup__mobilebox"
             placeholder="New password"
