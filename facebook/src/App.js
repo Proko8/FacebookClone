@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import LoginPage from "./components/LoginPage/LoginPage";
 import Home from "./components/HomePage/Home";
-import ProfilePage from "./components/ProfilePage/ProfilePage"
+import ProfilePage from "./components/ProfilePage/ProfilePage";
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +9,9 @@ import {
   useHistory,
 } from "react-router-dom";
 
+
 function App() {
+
   return (
     <Router>
       <Switch>

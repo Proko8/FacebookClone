@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS TabsDB;
+DROP DATABASE IF EXISTS Facebook;
 
-CREATE DATABASE TabsDB;
+CREATE DATABASE Facebook;
 
-USE TabsDB;
+USE Facebook;
 
 CREATE TABLE Accounts (
   id int NOT NULL AUTO_INCREMENT,
@@ -13,5 +13,15 @@ CREATE TABLE Accounts (
   PRIMARY KEY (ID)
 );
 
+CREATE TABLE Posts (
+  id int NOT NULL AUTO_INCREMENT,
+  firstname varchar(50) NOT NULL,
+  post varchar(50) NOT NULL,
+  PRIMARY KEY (ID)
+);
+
 INSERT INTO Accounts (firstname, lastname, email, password)
 VALUES ("Paul", "Prokopy", "pprokopy@gmail.com", "159753");
+
+INSERT INTO Posts (firstname, post)
+VALUES ("Paul", "Hello World");

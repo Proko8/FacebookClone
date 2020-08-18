@@ -1,15 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import "../../css/LoginPage/LoginSignup.css";
 
 function LoginSignup() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const login = (e) => {
-    e.preventDefault();
-
-    // .catch((e) => alert(e.message));
-  };
     
   return (
     <div className="loginsignup">
@@ -21,15 +13,15 @@ function LoginSignup() {
         <div>
           <input
             type="text"
-            className="loginsignup__fname"
+            className="lignsignup__fname"
             placeholder="First Name"
-            onChange=""
+            
           />
           <input
             type="text"
-            className="loginsignup__lname"
+            className="lignsignup__lname"
             placeholder="Last Name"
-            onChange=""
+            
           />
         </div>
         <br></br>
@@ -37,7 +29,7 @@ function LoginSignup() {
           type="text"
           className="loginsignup__mobilebox"
           placeholder="Mobile number or email"
-          onChange=""
+          
         />
         <br></br>
         <br></br>
@@ -45,7 +37,7 @@ function LoginSignup() {
           type="text"
           className="loginsignup__mobilebox"
           placeholder="New password"
-          onChange=""
+          
         />
       </div>
 
@@ -178,7 +170,7 @@ function LoginSignup() {
         Notifications from Facebook and can opt out at any time.
       </h5>
       <input className="loginsignup__submit" type="submit" value="Create Account"></input>
-      <h5 className="loginsignup__bottom">Create a Page for a celebrity, band or business.</h5>
+      <h5>Create a Page for a celebrity, band or business.</h5>
     </div>
   );
 }

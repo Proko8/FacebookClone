@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchIcon from "@material-ui/icons/Search";
+// import SearchIcon from "@material-ui/icons/Search";
 import "../../css/HomePage/HomeHeader.css";
 
 function HomeHeader() {
@@ -21,7 +21,7 @@ function HomeHeader() {
         <SearchIcon className="header__searchIcon" />
       </div> */}
 
-        <div class="topnav">
+        <div className="topnav">
           <input type="text" className="homeheader__search" placeholder="Search.."></input>
         </div>
       </div>

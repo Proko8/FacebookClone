@@ -30,6 +30,34 @@ const verifyAccount = (cb) => {
   });
 };
 
+const createPost = (cb) => {
+  connection.query(
+    "INSERT INTO Posts(firstname, post) VALUES (? , ?",
+    [firstname, post],
+    (err, data) => {
+      if (err) {
+        console.log("Could not create post.");
+        cb(err, null);
+      } else {
+        console.log("post created.");
+        cb(null, data);
+      }
+    }
+  );
+};
+
+const retrievePost = (cb) => {
+  connection.query("SELECT * from Posts", (err, data) => {
+    if (err) {
+      console.log("Could not create user.");
+      cb(err, null);
+    } else {
+      console.log("User created.");
+      cb(null, data);
+    }
+  });
+};
+
 module.exports = {
     createAccount,
     verifyAccount,
