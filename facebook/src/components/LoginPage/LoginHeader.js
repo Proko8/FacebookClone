@@ -1,23 +1,43 @@
 import React, { useState } from "react";
 import "../../css/LoginPage/LoginHeader.css";
-import { CognitoUserPool } from "amazon-cognito-identity-js";
+import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
+import UserPool from "./UserPool.js";
 
 function LoginHeader() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const poolData = {
-    UserPoolId: "us-east-2_EGvjyyHZy",
-    ClientId: "7ttja2lo5vednd9im5mittppc2",
-  };
-
-  const UserPool = new CognitoUserPool(poolData);
-
-  const onSubmit = (event) => {
+  // const onSubmit = (event) => {
+  //   event.preventDefault();
+  //   UserPool.signUp(email, password, [], null, (err, data) => {
+  //     if (err) console.error(err);
+  //     console.log(data);
+  //   });
+  // };
+  const onSubmit = event => {
     event.preventDefault();
-    UserPool.signUp(email, password, [], null, (err, data) => {
-      if (err) console.error(err);
-      console.log(data);
+
+    const user = new CognitoUser({
+      Username: email,
+      Pool: UserPool
+    });
+    const authDetails = new AuthenticationDetails({
+      Username: email,
+      Password: password
+    });
+
+    user.authenticateUser(authDetails, {
+      onSuccess: data => {
+        console.log("onSuccess:", data);
+      },
+
+      onFailure: err => {
+        console.error("onFailure:", err);
+      },
+
+      newPasswordRequired: data => {
+        console.log("newPasswordRequired:", data);
+      }
     });
   };
   return (

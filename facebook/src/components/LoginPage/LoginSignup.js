@@ -13,13 +13,13 @@ function LoginSignup() {
         <div>
           <input
             type="text"
-            className="lignsignup__fname"
+            className="loginsignup__fname"
             placeholder="First Name"
             
           />
           <input
             type="text"
-            className="lignsignup__lname"
+            className="loginsignup__lname"
             placeholder="Last Name"
             
           />
@@ -161,7 +161,7 @@ function LoginSignup() {
           type="checkbox"
           value="Male"
         ></input>
-        <h4 className="loginsignup__male">male</h4>
+        <h4 className="loginsignup__male">Male</h4>
       </div>
 
       <h5 className="loginsignup__terms">
