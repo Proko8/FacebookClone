@@ -1,39 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect,  } from "react";
 import "../../css/LoginPage/LoginHeader.css";
-import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
-import UserPool from "../UserPool.js";
+import { AccountContext } from "./Accounts";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   useHistory,
+// } from "react-router-dom";
 
 function LoginHeader() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [status, setStatus] = useState(false);
+  const { getSession, logout } = useContext(AccountContext);
+  const { authenticate } = useContext(AccountContext);
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    const user = new CognitoUser({
-      Username: email,
-      Pool: UserPool,
-    });
-    const authDetails = new AuthenticationDetails({
-      Username: email,
-      Password: password,
-    });
-
-    user.authenticateUser(authDetails, {
-      onSuccess: (data) => {
-        console.log("onSuccess:", data);
-      },
-
-      onFailure: (err) => {
-        console.error("onFailure:", err);
-        alert("Invalid email or password")
-      },
-
-      newPasswordRequired: (data) => {
-        console.log("newPasswordRequired:", data);
-      },
-    });
+    authenticate(email, password)
+      .then((data) => {
+        console.log("Logged in!", data);
+      })
+      .catch((err) => {
+        console.error("failed to log in!", err);
+      });
   };
+
+  useEffect(() => {
+    getSession().then((session) => {
+      console.log("Session:", session);
+      setStatus(true);
+    });
+  }, []);
+
   return (
     <div className="loginheader">
       <img
@@ -62,6 +62,13 @@ function LoginHeader() {
           Login
         </button>
       </form>
+      {/* <div>
+      {status ? (
+        <Switch>
+        <Route path="/home" component={Home} />
+      </Switch>
+      ) : ''}
+    </div> */}
     </div>
   );
 }

@@ -3,17 +3,19 @@ import LoginHeader from "./LoginHeader";
 import LoginLeft from "./LoginLeft"
 import LoginSignup from "./LoginSignup";
 import "../../css/LoginPage/LoginPage.css"
+import {Account} from "./Accounts";
 
 function LoginPage() {
     return (
-        <div className="loginpage">
+        <Account className="loginpage">
             <LoginHeader />
             <div className="loginpage__middle">
             <LoginLeft />
             <LoginSignup />
             </div>
-        </div>
+        </Account>
     )
 }
 
 export default LoginPage;
+
