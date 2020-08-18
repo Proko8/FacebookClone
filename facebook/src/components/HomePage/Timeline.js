@@ -11,38 +11,38 @@ class Timeline extends React.Component {
     };
   }
 
-  handleSubmit = (e) => {
+  postPostRequest = (e) => {
     e.preventDefault();
     let post = this.state.post;
     let firstname = this.state.firstname;
     axios
-      .post("/api/Posts/", { post, firstname })
+      .post("http://localhost:3008/api/Posts/", { post, firstname })
       .then((res) => {
         console.log("post sent");
-        this.changeHandler();
+        this.getAllPosts();
       })
       .catch((err) => {
-        console.log("error on postfront");
+        console.log("posts post request failed frontend");
       });
   };
 
-  handleInputChange = (e) => {
+  handleInputPost = (e) => {
     e.preventDefault();
     this.setState({
       firstname: e.target.value,
     });
   };
 
-  handleInputChanges = (e) => {
+  handleInputPosts = (e) => {
     e.preventDefault();
     this.setState({
       post: e.target.value,
     });
   };
 
-  changeHandler() {
+  getAllPosts() {
     axios
-      .get("/api/Posts/")
+      .get("http://localhost:3008/api/Posts/")
       .then((res) => {
         console.log(res.data);
         const data = res.data;
@@ -55,20 +55,20 @@ class Timeline extends React.Component {
   }
 
   componentDidMount() {
-    this.changeHandler();
+    this.getAllPosts();
   }
 
   render() {
     return (
       <div>
         <h1>Posts</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.postPostRequest}>
           <p>
             <input
               type="text"
               placeholder="What's on your mind, INSERT NAME HERE"
               posts="posts"
-              onChange={this.handleInputChanges}
+              onChange={this.handleInputPosts, this.handleInputPost}
             />
           </p>
           <p>
@@ -81,7 +81,7 @@ class Timeline extends React.Component {
             ? this.state.posts.map((value, index) => (
                 <div key={index}>
                   <div> {value.firstname}</div>
-                  <div>{value.posts}</div>
+                  <div>{value.post}</div>
                 </div>
               ))
             : null}

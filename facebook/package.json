@@ -1,33 +1,29 @@
 {
   "name": "facebook",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "Server.js",
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
     "amazon-cognito-identity-js": "^4.3.3",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-facebook": "^8.1.4",
-    "react-scripts": "3.4.2"
+    "react-scripts": "^3.4.2"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "serverStart": "nodemon index.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serverStart": "nodemon Server/server.js",
+    "start": "react-scripts start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
+  "proxy": "http://localhost:3008",
+  "author": "",
+  "license": "ISC",
   "browserslist": {
     "production": [
       ">0.2%",
