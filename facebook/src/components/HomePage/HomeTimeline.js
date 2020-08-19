@@ -65,7 +65,7 @@ class Timeline extends React.Component {
   render() {
     return (
       <div className="timeline">
-        <h1>Posts</h1>
+        <br></br>
         <form onSubmit={this.postPostRequest}>
           <div className="timeline__post">
             <input

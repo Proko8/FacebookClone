@@ -1,8 +1,20 @@
 .home__wrapper{
 display: grid;
-grid-template-columns: 200px 800px;
+grid-template-columns: 200px 800px 300px;
 background-color: rgb(219, 228, 231);
+justify-content: center;
 }
 
-.home__homeMenu{
+.homeads__mainPic{
+    max-width: 300px;
+}
+
+.homeads{
+    color: grey;
+}
+
+.homeads__gamePics{
+    max-width: 150px;
+    max-height: 150px;
+    padding: 5px;
 }
