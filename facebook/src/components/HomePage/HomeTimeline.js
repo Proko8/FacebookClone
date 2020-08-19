@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "../../css/HomePage/Timeline.css";
+import "../../css/HomePage/HomeTimeline.css";
 
 class Timeline extends React.Component {
   constructor(props) {
@@ -14,12 +14,12 @@ class Timeline extends React.Component {
 
   postPostRequest = (e) => {
     e.preventDefault();
-    // let post = this.state.post;
-    // let firstname = this.state.firstname;
+    let post = this.state.post;
+    let firstname = this.state.firstname;
     axios
       .post("http://localhost:3008/api/posts", {
-        firstname: this.state.firstname,
-        post: this.state.post,
+        firstname,
+        post,
       })
       .then((res) => {
         console.log("post sent");
@@ -51,7 +51,6 @@ class Timeline extends React.Component {
         console.log(res.data);
         const data = res.data;
         this.setState({ posts: data });
-        console.log("posts get request worked");
       })
       .catch((err) => {
         console.error(err);
@@ -69,11 +68,18 @@ class Timeline extends React.Component {
         <form onSubmit={this.postPostRequest}>
           <div className="timeline__post">
             <input
+              className="timeline__Name"
+              type="text"
+              placeholder="Your Name" //username wil be inserted here
+              firstname="firstname"
+              onChange={this.handleInputPost}
+            />
+            <input
               className="timeline__postbox"
               type="text"
               placeholder="What's on your mind, Paul?" //username wil be inserted here
               posts="posts"
-              onChange={(this.handleInputPosts, this.handleInputPost)}
+              onChange={this.handleInputPosts}
             />
           </div>
           <div>

@@ -30,6 +30,18 @@ var connection = mysql.createConnection(mysqlConfig);
 //   });
 // };
 
+const retrievePost = (cb) => {
+  connection.query("SELECT * from posts", (err, data) => {
+    if (err) {
+      console.log("Could not create user.");
+      cb(err, null);
+    } else {
+      console.log("User created.");
+      cb(null, data);
+    }
+  });
+};
+
 const createPost = (firstname, post, cb) => {
   connection.query(
     "INSERT INTO posts(firstname, post) VALUES (? , ?",
@@ -46,17 +58,6 @@ const createPost = (firstname, post, cb) => {
   );
 };
 
-const retrievePost = (cb) => {
-  connection.query("SELECT * from posts", (err, data) => {
-    if (err) {
-      console.log("Could not create user.");
-      cb(err, null);
-    } else {
-      console.log("User created.");
-      cb(null, data);
-    }
-  });
-};
 
 module.exports = {
   // createAccount,

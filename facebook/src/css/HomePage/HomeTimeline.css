@@ -44,3 +44,7 @@
     border: white;
     font-weight: 700;
 }
+
+.timeline__Name{
+    display: flex;
+}

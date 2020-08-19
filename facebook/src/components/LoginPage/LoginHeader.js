@@ -1,12 +1,13 @@
-import React, { useState, useContext, useEffect,  } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "../../css/LoginPage/LoginHeader.css";
 import { AccountContext } from "./Accounts";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   useHistory,
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory,
+  Link
+} from "react-router-dom";
 
 function LoginHeader() {
   const [email, setEmail] = useState("");
@@ -57,18 +58,13 @@ function LoginHeader() {
           placeholder="Password"
           onChange={(event) => setPassword(event.target.value)}
         />
-
+        <Link to="/home">
         <button className="loginheader__loginbutton" type="submit">
           Login
         </button>
+        </Link>
       </form>
-      {/* <div>
-      {status ? (
-        <Switch>
-        <Route path="/home" component={Home} />
-      </Switch>
-      ) : ''}
-    </div> */}
+     
     </div>
   );
 }

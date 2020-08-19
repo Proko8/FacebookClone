@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../css/LoginPage/LoginSignup.css";
 import UserPool from "./UserPool";
+import { Link } from "react-router-dom";
 
 function LoginSignup() {
   const [email, setEmail] = useState("");
@@ -180,13 +181,15 @@ function LoginSignup() {
             read our Data Policy, including our Cookie Use. You may recieve SMS
             Notifications from Facebook and can opt out at any time.
           </h5>
-          <button
-            className="loginsignup__submit"
-            type="submit"
-            value="Create Account"
-          >
-            Sign up
-          </button>
+          <Link to="/login">
+            <button
+              className="loginsignup__submit"
+              type="submit"
+              value="Create Account"
+            >
+              Sign up
+            </button>
+          </Link>
         </form>
       </div>
       <h5>Create a Page for a celebrity, band or business.</h5>

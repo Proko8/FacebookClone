@@ -48,7 +48,6 @@ app.use(express.static(path.join(__dirname + '/../react-client/dist')));
     });
   
     app.post('/api/posts', function (req, res) {
-      console.log("Before DB")
       db.createPost(req.body.firstname, req.body.post,(err, data) => {          
         if(err){                                
           console.log('Posts DB POST error');
