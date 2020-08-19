@@ -35,6 +35,10 @@ function HomeHeader() {
           <span className="homeheader__home">Home</span>
       </Link>
         <span className="homeheader__create">Create</span>
+        <span className="homeheader__icons"><img className="homeheader__icons__pic" src="https://www.womeninretail.com/wp-content/uploads/2015/07/1400.jpg"/></span>
+        <span className="homeheader__icons"><img className="homeheader__icons__pic" src="https://i.kinja-img.com/gawker-media/image/upload/c_scale,f_auto,fl_progressive,pg_1,q_80,w_800/kqenajeoi6noq2opkqnc.jpg"/></span>
+        <span className="homeheader__icons"><img className="homeheader__icons__pic" src="https://www.wikitechy.com/technology/wp-content/uploads/2017/04/facebook_notifications_thumb_1483607872408.png"/></span>
+        <span className="homeheader__icons"><img className="homeheader__icons__pic" src=""/></span>
       </div>
     </nav>
   );

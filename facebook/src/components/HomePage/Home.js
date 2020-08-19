@@ -1,15 +1,25 @@
 import React from "react";
 import HomeHeader from "./HomeHeader";
-import Timeline from "./Timeline";
+import Timeline from "./HomeTimeline";
+import HomeMenu from "./HomeMenu";
+import "../../css/HomePage/Home.css";
 
 function Home() {
-
   return (
-    <div>
+    <div className="home">
+      <div className="home__homeHeader">
         <HomeHeader />
-        <Timeline />
+      </div>
+      <div className="home__wrapper">
+        <div className="home__homeMenu">
+          <HomeMenu />
+        </div>
+        <div className="home__homeTimeline">
+          <Timeline />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default Home;

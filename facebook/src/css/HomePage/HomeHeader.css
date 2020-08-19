@@ -9,7 +9,7 @@
 .homeheader__logo {
   max-width: 20px;
   max-height: 20px;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 .homeheader__left {
   display: flex;
@@ -23,22 +23,32 @@
   margin-top: 5px;
 }
 
-.homeheader__user {
-  
-}
-
 .homeheader__search {
   margin-left: 15px;
   padding-right: 200px;
-  margin-top: 4px;
+  margin-top: 9px;
 }
 
 .homeheader__user{
     color: white;
+    text-decoration: none;
+    margin-top: 5px;
 }
 
 .homeheader__home{
     color: white;
     margin-right: 5px;
     margin-left: 5px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.homeheader__icons__pic{
+  max-width: 100px;
+  max-height: 30px;
+  margin-left: 10px;
+}
+
+.homeheader__create{
+  margin-top: 5px;
 }
