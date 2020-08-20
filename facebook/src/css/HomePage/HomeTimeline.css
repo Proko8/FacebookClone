@@ -34,6 +34,7 @@
 .timeline__timelineposts{
     padding: 25px;
     background-color: white;
+    border-radius: 5px;
 }
 .timeline__lcs{
     background-color: white;
@@ -51,9 +52,9 @@
 
 .timeline__break{
     margin-left: -25px;
+    margin-top: 50px;
     background-color: rgb(219, 228, 231);
     height: 20px;
     width: 600px;
     border: none;
-    
 }

@@ -1,6 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AccountContext } from "./Accounts";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import "../../css/LoginPage/LoginHeader.css";
 import { render } from "react-dom";
 
@@ -14,10 +19,10 @@ function LoginHeader() {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log(status);
-
     authenticate(email, password)
       .then((data) => {
         console.log("Logged in!", data);
+        setStatus(true);
       })
       .catch((err) => {
         console.error("failed to log in!", err);
@@ -54,13 +59,13 @@ function LoginHeader() {
           placeholder="Password"
           onChange={(event) => setPassword(event.target.value)}
         />
-        {/* <Link to="/home"> */}
+        
         <button className="loginheader__loginbutton" type="submit">
           Login
         </button>
         <div>{status === true ? <Link to="/home" /> : null}</div>
 
-        {/* </Link> */}
+        
       </form>
     </div>
   );
