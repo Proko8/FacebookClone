@@ -1,23 +1,19 @@
 import React, { useState, useContext, useEffect } from "react";
-import "../../css/LoginPage/LoginHeader.css";
 import { AccountContext } from "./Accounts";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useHistory,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import "../../css/LoginPage/LoginHeader.css";
+import { render } from "react-dom";
 
 function LoginHeader() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState(false);
-  const { getSession, logout } = useContext(AccountContext);
+  const { getSession } = useContext(AccountContext);
   const { authenticate } = useContext(AccountContext);
 
   const onSubmit = (event) => {
     event.preventDefault();
+    console.log(status);
 
     authenticate(email, password)
       .then((data) => {
@@ -58,13 +54,14 @@ function LoginHeader() {
           placeholder="Password"
           onChange={(event) => setPassword(event.target.value)}
         />
-        <Link to="/home">
+        {/* <Link to="/home"> */}
         <button className="loginheader__loginbutton" type="submit">
           Login
         </button>
-        </Link>
+        <div>{status === true ? <Link to="/home" /> : null}</div>
+
+        {/* </Link> */}
       </form>
-     
     </div>
   );
 }

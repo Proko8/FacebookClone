@@ -105,6 +105,7 @@ class Timeline extends React.Component {
                   <button className="timeline__lcs">Like</button>
                   <button className="timeline__lcs">Comment</button>
                   <button className="timeline__lcs">Share</button>
+                  <hr className="timeline__break"></hr>
                 </div>
               ))
             : null}

@@ -7,13 +7,15 @@ import {Account} from "./Accounts";
 
 function LoginPage() {
     return (
-        <Account className="loginpage">
+        <div className="loginpage">
+        <Account>
             <LoginHeader />
             <div className="loginpage__middle">
             <LoginLeft />
             <LoginSignup />
             </div>
         </Account>
+        </div>
     )
 }
 

@@ -1,7 +1,7 @@
 .loginpage{
     /* background: linear-gradient( #ffffff, #ffffff,#ffffff,#3b5998) */
-    background-color:#e9ebee;
-    
+    background-color: rgb(219, 228, 231);
+    padding-bottom: 700px;
 }
 .loginpage__middle{
     display: flex;
