@@ -9,15 +9,15 @@ function App() {
   return (
     <Router>
       <Switch>
-        {/* {authStatus === false ? ( */}
+        {/* {authStatus() === false ? ( */}
           <Route path="/login">
             <LoginPage />
           </Route>
-        {/* ) : ( */}
+         {/* ) : ( */}
           <Route path="/home">
             <Home />
           </Route>
-        {/* )} */}
+       {/* )} */}
         <Route path="/profile">
           <ProfilePage />
         </Route>

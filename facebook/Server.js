@@ -7,11 +7,16 @@ const port = "8080";
 var cors = require("cors");
 
 app.use(cors());
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname + "/../react-client/dist")));
 
-app.get("/api/posts", function (req, res) {
+app.get("/api/posts", function (req, res, next) {
   db.retrievePost((err, data) => {
     if (err) {
       console.log("Posts DB GET error");
@@ -23,14 +28,15 @@ app.get("/api/posts", function (req, res) {
   });
 });
 
-app.post("/api/posts", function (req, res) {
-  db.createPost(req.body.firstname, req.body.post, (err, data) => {
+app.post("/api/posts", function (req, res, next) {
+  console.log(req.body)
+  db.createPost(req.body.firstname.firstname, req.body.post.post, (err, data) => {
     if (err) {
       console.log("Posts DB POST error");
-      res.sendStatus(404).send(data);
+      res.sendStatus(404)
     } else {
       console.log("Posts post submitted");
-      res.sendStatus(200).send(data);
+      res.sendStatus(200)
     }
   });
 });

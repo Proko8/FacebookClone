@@ -5,18 +5,19 @@ var connection = mysql.createConnection(mysqlConfig);
 const retrievePost = (cb) => {
   connection.query("SELECT * from posts", (err, data) => {
     if (err) {
-      console.log("Could not create user.");
+      console.log("Could not update timeline.");
       cb(err, null);
     } else {
-      console.log("User created.");
+      console.log("timeline updated.");
       cb(null, data);
     }
   });
 };
 
 const createPost = (firstname, post, cb) => {
+  console.log(typeof post)
   connection.query(
-    "INSERT INTO posts(firstname, post) VALUES (? , ?",
+    "INSERT INTO posts (firstname, post) VALUES (? , ?)",
     [firstname, post],
     (err, data) => {
       if (err) {

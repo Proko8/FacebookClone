@@ -9,12 +9,10 @@ function Timeline() {
 
   const postPostRequest = (e) => {
     e.preventDefault();
-    // let post = this.state.post;
-    // let firstname = this.state.firstname;
     axios
       .post("http://localhost:8080/api/posts", {
-        firstname : firstname,
-        post : post,
+        firstname,
+        post,
       })
       .then((res) => {
         console.log("post sent");
@@ -28,14 +26,14 @@ function Timeline() {
   const handleInputPost = (e) => {
     e.preventDefault();
     setFirstname({
-      firstname : e.target.value,
+      firstname: e.target.value,
     });
   };
 
-  const handleInputPosts =(e) => {
+  const handleInputPosts = (e) => {
     e.preventDefault();
     setPost({
-      post : e.target.value,
+      post: e.target.value,
     });
   };
 
@@ -44,7 +42,7 @@ function Timeline() {
       .get("http://localhost:8080/api/posts/")
       .then((res) => {
         console.log(res.data);
-        setPosts( res.data );
+        setPosts(res.data);
       })
       .catch((err) => {
         console.error(err);
@@ -52,8 +50,8 @@ function Timeline() {
   };
 
   useEffect(() => {
-    getAllPosts()
-    }, []);
+    getAllPosts();
+  }, []);
 
   return (
     <div className="timeline">
@@ -76,10 +74,7 @@ function Timeline() {
           />
         </div>
         <div>
-          <button
-            className="timeline__postbutton"
-            onClick={postPostRequest}
-          >
+          <button className="timeline__postbutton" onClick={postPostRequest}>
             {" "}
             Post{" "}
           </button>

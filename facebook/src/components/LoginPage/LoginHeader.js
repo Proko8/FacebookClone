@@ -66,8 +66,4 @@ function LoginHeader() {
   );
 }
 
-export const authStatus = () => (
-  LoginHeader.state.status
-);
-
 export default LoginHeader;
