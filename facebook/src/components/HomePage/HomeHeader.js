@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
-// import SearchIcon from "@material-ui/icons/Search";
+// import { authStatus } from "../LoginPage/LoginHeader";
 import "../../css/HomePage/HomeHeader.css";
 
 function HomeHeader() {
+  // const [isLoggedIn, setIsLoggedIn ] = useState(authStatus);
+  
   return (
     <nav className="homeheader">
       <div className="homeheader__left">
@@ -16,32 +18,55 @@ function HomeHeader() {
           />
         </Link>
 
-        {/* <div className="header__search">
-        <input type="text" className="header__searchInput" />
-        <SearchIcon className="header__searchIcon" />
-      </div> */}
-
         <div className="topnav">
-          <input type="text" className="homeheader__search" placeholder="Search.."></input>
+          <input
+            type="text"
+            className="homeheader__search"
+            placeholder="Search.."
+          ></input>
         </div>
       </div>
 
       <div className="homeheader__right">
-      <Link to="/profile" className="homeheader__user">
+        <Link to="/profile" className="homeheader__user">
           <span className="homeheader__user">Your Name</span>
-      </Link>
+        </Link>
 
-      <Link to="/home" className="homeheader__home">
+        <Link to="/home" className="homeheader__home">
           <span className="homeheader__home">Home</span>
-      </Link>
+        </Link>
         <span className="homeheader__create">Create</span>
-        <span className="homeheader__icons"><img className="homeheader__icons__pic" src="https://www.womeninretail.com/wp-content/uploads/2015/07/1400.jpg"/></span>
-        <span className="homeheader__icons"><img className="homeheader__icons__pic" src="https://i.kinja-img.com/gawker-media/image/upload/c_scale,f_auto,fl_progressive,pg_1,q_80,w_800/kqenajeoi6noq2opkqnc.jpg"/></span>
-        <span className="homeheader__icons"><img className="homeheader__icons__pic" src="https://www.wikitechy.com/technology/wp-content/uploads/2017/04/facebook_notifications_thumb_1483607872408.png"/></span>
-        <span className="homeheader__icons"><img className="homeheader__icons__pic" src=""/></span>
+        <span className="homeheader__icons">
+          <img
+            className="homeheader__icons__pic"
+            src="https://www.womeninretail.com/wp-content/uploads/2015/07/1400.jpg"
+            alt=""
+          />
+        </span>
+        <span className="homeheader__icons">
+          <img
+            className="homeheader__icons__pic"
+            src="https://i.kinja-img.com/gawker-media/image/upload/c_scale,f_auto,fl_progressive,pg_1,q_80,w_800/kqenajeoi6noq2opkqnc.jpg"
+            alt=""
+          />
+        </span>
+        <span className="homeheader__icons">
+          <img
+            className="homeheader__icons__pic"
+            src="https://www.wikitechy.com/technology/wp-content/uploads/2017/04/facebook_notifications_thumb_1483607872408.png"
+            alt=""
+          />
+        </span>
+
+        {/* <button className="homeheader__logout" onSubmit={(setIsLoggedIn(false))}>
+          Log Out
+        </button> */}
       </div>
     </nav>
   );
 }
 
+// const authStatusIn = () => {
+//   authStatus
+// }
 export default HomeHeader;

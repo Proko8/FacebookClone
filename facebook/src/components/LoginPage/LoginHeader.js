@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AccountContext } from "./Accounts";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "../../css/LoginPage/LoginHeader.css";
-import { render } from "react-dom";
+// import { render } from "react-dom";
 
 function LoginHeader() {
   const [email, setEmail] = useState("");
@@ -11,8 +11,8 @@ function LoginHeader() {
   const { getSession } = useContext(AccountContext);
   const { authenticate } = useContext(AccountContext);
 
-  const onSubmit = (event) => {
-    event.preventDefault();
+  const onSubmit = (e) => {
+    e.preventDefault();
     console.log(status);
     authenticate(email, password)
       .then((data) => {
@@ -25,6 +25,7 @@ function LoginHeader() {
       });
   };
 
+  
   useEffect(() => {
     getSession().then((session) => {
       console.log("Session:", session);
@@ -64,5 +65,9 @@ function LoginHeader() {
     </div>
   );
 }
+
+export const authStatus = () => (
+  LoginHeader.state.status
+);
 
 export default LoginHeader;
