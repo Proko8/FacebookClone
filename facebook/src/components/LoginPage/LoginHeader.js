@@ -1,30 +1,51 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AccountContext } from "./Accounts";
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { useStateValue } from "../../StateProvider";
 import "../../css/LoginPage/LoginHeader.css";
-// import { render } from "react-dom";
+
 
 function LoginHeader() {
+  const history = useHistory();
+  const [{ user }, dispatch] = useStateValue();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState(false);
   const { getSession } = useContext(AccountContext);
   const { authenticate } = useContext(AccountContext);
 
+  useEffect(() => {
+    const unsubscribe = status => {
+      if(status){
+        dispatch({
+          type: "SET__",
+          user: true,
+        })
+      }else{
+        dispatch({
+          type: "SET__USER",
+          user: false,
+         })
+      }
+    }
+    return () => {
+      unsubscribe();
+    }
+  }, [])
+
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(status);
+    console.log(status, "status");
     authenticate(email, password)
       .then((data) => {
         console.log("Logged in!", data);
         setStatus(true);
+        history.push("/home");
       })
-      // .then(status === true ? <Link to="/home" /> : null)
       .catch((err) => {
         console.error("failed to log in!", err);
       });
   };
-
   
   useEffect(() => {
     getSession().then((session) => {
