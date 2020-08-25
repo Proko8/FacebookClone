@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../css/LoginPage/LoginSignup.css";
-import UserPool from "./UserPool";
+import UserPool from "../UserPool";
 import { Link } from "react-router-dom";
 
 function LoginSignup() {

@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-// import { authStatus } from "../LoginPage/LoginHeader";
+
 import "../../css/HomePage/HomeHeader.css";
 
 function HomeHeader() {
-  // const [isLoggedIn, setIsLoggedIn ] = useState(authStatus);
+  
   
   return (
     <nav className="homeheader">
@@ -57,16 +57,9 @@ function HomeHeader() {
             alt=""
           />
         </span>
-
-        {/* <button className="homeheader__logout" onSubmit={(setIsLoggedIn(false))}>
-          Log Out
-        </button> */}
       </div>
     </nav>
   );
 }
 
-// const authStatusIn = () => {
-//   authStatus
-// }
 export default HomeHeader;

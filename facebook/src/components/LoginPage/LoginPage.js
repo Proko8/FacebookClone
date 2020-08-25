@@ -3,7 +3,7 @@ import LoginHeader from "./LoginHeader";
 import LoginLeft from "./LoginLeft"
 import LoginSignup from "./LoginSignup";
 import "../../css/LoginPage/LoginPage.css"
-import {Account} from "./Accounts";
+import {Account} from "../Accounts";
 
 function LoginPage() {
     return (
