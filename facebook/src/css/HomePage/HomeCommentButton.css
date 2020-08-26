@@ -1,0 +1,12 @@
+.comment__button{
+    margin-top: 70px;
+    background-color: white;
+    color: #3b5998;
+    border: none;
+    font-weight: 650;
+    display: flex;
+}
+.comment__pic{
+    height: 20px;
+    margin-right: 10px;
+}

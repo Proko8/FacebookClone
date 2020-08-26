@@ -1,0 +1,40 @@
+.likebutton__likebutton{
+    width: 70px;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color:#3b5998;
+    background-color: white;
+    border: none;
+    margin-top: 50px;
+    font-weight: 650;
+}
+
+.likebutton__thumb{
+    display: flex;
+    width: 20px;
+}
+
+.likebutton__thumbsUp{
+    width: 20px;
+
+}
+
+.likebutton__likebutton2{
+    width: 70px;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color:#3b5998;
+    background-color: white;
+    border: none;
+    margin-top: 50px;
+    font-weight: 800; 
+}
+
+.likebutton__liked{
+    color: #3b5998;
+    font-weight: 650;
+}

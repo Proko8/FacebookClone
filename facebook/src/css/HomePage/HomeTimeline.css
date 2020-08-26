@@ -38,10 +38,10 @@
 }
 .timeline__lcs{
     background-color: white;
-    color: rgb(70, 69, 69);
+    color: #3b5998;
     align-items: center;
     margin-left: 90px;
-    margin-top: 15px;
+    margin-top: 60px;
     border: white;
     font-weight: 700;
 }
@@ -57,4 +57,23 @@
     height: 20px;
     width: 600px;
     border: none;
+}
+
+.timeline__buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.timeline__commentBox{
+    width: 540px;
+    border-radius: 20px;
+    height: 30px;
+    background-color: rgb(219, 228, 231);
+    border: none;
+    padding: 3px;
+    padding-left:10px
+}
+
+.timeline__sharePic{
+    height:20px;
 }
