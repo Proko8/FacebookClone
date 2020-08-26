@@ -9,6 +9,7 @@ function LoginHeader() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState(false);
+  
   const { getSession } = useContext(AccountContext);
   const { authenticate } = useContext(AccountContext);
 

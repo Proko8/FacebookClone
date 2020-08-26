@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import {Account} from "../Accounts.js"
 import "../../css/HomePage/HomeHeader.css";
 
 function HomeHeader() {
@@ -29,7 +29,8 @@ function HomeHeader() {
 
       <div className="homeheader__right">
         <Link to="/profile" className="homeheader__user">
-          <span className="homeheader__user">Your Name</span>
+          {console.log(Account.user)}
+          <span className="homeheader__user">{Account.user}</span>
         </Link>
 
         <Link to="/home" className="homeheader__home">

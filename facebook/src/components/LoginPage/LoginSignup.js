@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../../css/LoginPage/LoginSignup.css";
 import UserPool from "../UserPool";
 import { Link } from "react-router-dom";
@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 function LoginSignup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -27,11 +30,13 @@ function LoginSignup() {
             type="text"
             className="loginsignup__fname"
             placeholder="First Name"
+            onChange={(event) => setFirstName(event.target.value)}
           />
           <input
             type="text"
             className="loginsignup__lname"
             placeholder="Last Name"
+            onChange={(event) => setLastName(event.target.value)}
           />
         </div>
         <br></br>
@@ -181,10 +186,10 @@ function LoginSignup() {
             read our Data Policy, including our Cookie Use. You may recieve SMS
             Notifications from Facebook and can opt out at any time.
           </h5>
-          <Link to="/login">
+          <Link to="/">
             <button
               className="loginsignup__submit"
-              type="submit"
+              onClick={onSubmit}
               value="Create Account"
             >
               Sign up
