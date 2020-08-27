@@ -1,0 +1,9 @@
+.comment__button{
+    margin-top: 0px;
+    
+}
+
+.comment{
+    display: flex;
+    flex-direction: row;
+}

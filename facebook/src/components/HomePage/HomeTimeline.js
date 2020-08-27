@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import HomeLikeButton from "./HomeLikeButton";
 import HomeCommentButton from "./HomeCommentButton";
+import HomeComment from "./HomeComment"
 import "../../css/HomePage/HomeTimeline.css";
 
 function Timeline() {
@@ -94,7 +95,7 @@ function Timeline() {
                   <HomeCommentButton />
                   <button className="timeline__lcs"><img className="timeline__sharePic" src="https://static.thenounproject.com/png/1314306-200.png"/>Share</button>
                 </div>
-                <input type="text" className="timeline__commentBox" placeholder="Write a comment..."></input>
+                <HomeComment />
                 <hr className="timeline__break"></hr>
               </div>
             ))
