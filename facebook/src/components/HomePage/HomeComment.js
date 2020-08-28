@@ -49,7 +49,7 @@ function HomeComment() {
       {/* {comments.length > 0
         ? comments.map((value, index) => ( */}
             <form onSubmit={commentPostRequest}>
-              <div className="timeline__post">
+              <div className="comment__post">
                 <input
                   type="text"
                   className="timeline__commentBox"
@@ -57,7 +57,7 @@ function HomeComment() {
                   onChange={handleInputComments}
                 />
                 <button
-                  className="comment__button"
+                  className="comment__send"
                   onClick={commentPostRequest}
                 >
                   {" "}

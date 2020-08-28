@@ -5,11 +5,7 @@
 .loginleft__connect{
     color: black;
 }
-.loginleft__boldfont{
-    display: flex;
-    flex-direction: row;
-    font-weight: bold;
-}
+
 .loginleft__dullfont{
     margin-top: 2px;
     margin-left: 10px;
@@ -17,12 +13,25 @@
 }
 .loginleft__text{
     margin-left: 80px;
-    padding-top: 13px;
+    padding-top: 30px;
 }
 .longleft__pics{
+    max-height: 100px;
     max-width: 100px;
     margin-right: 50px;
+    margin-top: 5px;
+    position: relative;
+    top: 45px;
+    left: 15px;
+}
+.longleft__pics1{
+    max-width: 160px;
+    position: relative;
+    left: -20px;
+    top: 75px;
 }
 .loginleft__boldfont{
-
+    position: relative;
+    top: -100px;
 }
+

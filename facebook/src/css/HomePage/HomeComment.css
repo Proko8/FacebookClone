@@ -1,9 +1,19 @@
-.comment__button{
+.comment__send{
     margin-top: 0px;
-    
+    background-color: transparent;
+    position: relative;
+    left: -60px;
+    border: none;
+    color: #3b5998;
+    font-weight: 650;
 }
 
 .comment{
+    display: flex;
+    flex-direction: row;
+}
+
+.comment__post{
     display: flex;
     flex-direction: row;
 }

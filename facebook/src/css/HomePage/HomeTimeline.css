@@ -36,12 +36,10 @@
     background-color: white;
     border-radius: 5px;
 }
-.timeline__lcs{
+.timeline__share{
     background-color: white;
     color: #3b5998;
     align-items: center;
-    margin-left: 90px;
-    margin-top: 60px;
     border: white;
     font-weight: 700;
 }
@@ -61,7 +59,9 @@
 
 .timeline__buttons{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    margin-top: 50px;
 }
 
 .timeline__commentBox{

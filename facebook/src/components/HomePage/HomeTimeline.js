@@ -93,7 +93,7 @@ function Timeline() {
                 <div className="timeline__buttons">
                   <HomeLikeButton />
                   <HomeCommentButton />
-                  <button className="timeline__lcs"><img className="timeline__sharePic" src="https://static.thenounproject.com/png/1314306-200.png"/>Share</button>
+                  <button className="timeline__share"><img className="timeline__sharePic" src="https://static.thenounproject.com/png/1314306-200.png"/>Share</button>
                 </div>
                 <HomeComment />
                 <hr className="timeline__break"></hr>
