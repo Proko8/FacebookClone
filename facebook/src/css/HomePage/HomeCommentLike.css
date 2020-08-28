@@ -1,0 +1,25 @@
+.HomeCommentLike{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: -10px;
+    margin-bottom: 10px;
+}
+
+.HomeCommentLike__likebutton{
+background-color: transparent;
+border: none;
+color: #3b5998;
+font-weight: 650;
+}
+
+.HomeCommentLike__likebutton2{
+    background-color: transparent;
+    border: none;
+    color: #3b5998;
+    font-weight: 900;
+}
+
+.HomeCommentLike__thumbsUp{
+    max-width: 20px;
+}

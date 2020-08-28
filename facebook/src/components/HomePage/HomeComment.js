@@ -1,36 +1,14 @@
 import React, { useState, useEffect } from "react";
+import HomeCommentLike from "./HomeCommentLike";
 import axios from "axios";
-import "../../css/HomePage/HomeComment.css"
+import "../../css/HomePage/HomeComment.css";
 
 function HomeComment() {
-  const [comments, setComments] = useState([]);
-  const [comment, setComment] = useState("");
-
-  const commentPostRequest = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:8080/api/posts", {
-        comment,
-      })
-      .then((res) => {
-        console.log("comments sent");
-        getAllComments();
-      })
-      .catch((err) => {
-        console.log("comments post request failed frontend");
-      });
-  };
-
-  const handleInputComments = (e) => {
-    e.preventDefault();
-    setComment({
-      comment: e.target.value,
-    });
-  };
+    const [comments, setComments] = useState([]);
 
   const getAllComments = () => {
     axios
-      .get("http://localhost:8080/api/posts/")
+      .get("http://localhost:8080/api/comments/")
       .then((res) => {
         console.log(res.data);
         setComments(res.data);
@@ -45,28 +23,19 @@ function HomeComment() {
   }, []);
 
   return (
-    <div className="comment">
-      {/* {comments.length > 0
-        ? comments.map((value, index) => ( */}
-            <form onSubmit={commentPostRequest}>
-              <div className="comment__post">
-                <input
-                  type="text"
-                  className="timeline__commentBox"
-                  placeholder="Write a comment..."
-                  onChange={handleInputComments}
-                />
-                <button
-                  className="comment__send"
-                  onClick={commentPostRequest}
-                >
-                  {" "}
-                  Send{" "}
-                </button>
+    <div>
+      <div className="comment">
+        {comments.length > 0
+          ? comments.map((value, index) => (
+              <div key={index}>
+                <div className="comment__comments"> {value.comment}</div>
+                <hr className="comment__break"></hr>
+                <HomeCommentLike />
               </div>
-            </form>
-          {/* ))
-        : null} */}
+             
+            ))
+          : null}
+      </div>
     </div>
   );
 }

@@ -24,6 +24,7 @@ function HomeLikeButton() {
             <img
               className="likebutton__thumb"
               src="https://spng.pinpng.com/pngs/s/41-415348_facebook-dislike-transparent-thumbs-down-vector-icon-facebook.png"
+            alt=""
             />
             Like
           </button>
@@ -32,6 +33,7 @@ function HomeLikeButton() {
             <img
               className="likebutton__thumbsUp"
               src="https://www.clipartkey.com/mpngs/m/5-55669_blue-thumbs-up-icon.png"
+              alt=""
             />
             Like
           </button>

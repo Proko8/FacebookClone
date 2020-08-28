@@ -2,6 +2,7 @@ var mysql = require("mysql");
 var mysqlConfig = require("./DBConfig.js");
 var connection = mysql.createConnection(mysqlConfig);
 
+//posts
 const retrievePost = (cb) => {
   connection.query("SELECT * from posts", (err, data) => {
     if (err) {
@@ -13,9 +14,8 @@ const retrievePost = (cb) => {
     }
   });
 };
-
+//posts
 const createPost = (firstname, post, cb) => {
-  console.log(typeof post)
   connection.query(
     "INSERT INTO posts (firstname, post) VALUES (? , ?)",
     [firstname, post],
@@ -30,10 +30,41 @@ const createPost = (firstname, post, cb) => {
     }
   );
 };
+//comments
+const retrieveComments = (cb) => {
+  connection.query("SELECT * from comments", (err, data) => {
+    if (err) {
+      console.log("Could not update comments.");
+      cb(err, null);
+    } else {
+      console.log("comments updated.");
+      cb(null, data);
+    }
+  });
+};
+//comments
+const createComment = (comment, cb) => {
+  console.log(typeof comment);
+  connection.query(
+    "INSERT INTO comments (comment) VALUES (?)",
+    [comment],
+    (err, data) => {
+      if (err) {
+        console.log("Could not create comment.");
+        cb(err, null);
+      } else {
+        console.log("comment created.");
+        cb(null, data);
+      }
+    }
+  );
+};
 
 module.exports = {
   retrievePost,
   createPost,
+  createComment,
+  retrieveComments,
   // createAccount,
   // verifyAccount,
 };

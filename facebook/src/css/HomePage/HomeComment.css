@@ -1,19 +1,11 @@
-.comment__send{
-    margin-top: 0px;
-    background-color: transparent;
-    position: relative;
-    left: -60px;
+.comment__comments{
+    margin-top: 25px;
+    background-color: rgb(219, 228, 231);
+    padding: 15px;
+    border-radius: 15px;
+    
+}
+
+.comment__break{
     border: none;
-    color: #3b5998;
-    font-weight: 650;
-}
-
-.comment{
-    display: flex;
-    flex-direction: row;
-}
-
-.comment__post{
-    display: flex;
-    flex-direction: row;
 }
