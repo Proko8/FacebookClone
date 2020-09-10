@@ -28,6 +28,7 @@ function HomeCommentBox() {
     });
   };
 
+
   return (
     <div className="commentbox">
       <form onSubmit={commentPostRequest}>
